@@ -1,6 +1,6 @@
 package Student;
 
-import Student.Student;
+import java.util.Scanner;
 
 public class StudentManager {
 
@@ -35,7 +35,5 @@ public class StudentManager {
         }
         System.out.println(minMedium);
     }
-
-
 
 }

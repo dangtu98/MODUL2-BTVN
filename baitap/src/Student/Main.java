@@ -36,6 +36,7 @@ public class Main {
                 case 3 :
                     studentManagers.minStudenMedium(students);
                     break;
+                case 4 :
             }
         }
     }
