@@ -1,14 +1,14 @@
-package BT2012;
+package BT2012.Model;
 
 public class Animal {
-    private String name;
+    private  String name;
     private int age;
-    private double weight;
+    private int weight;
 
-    public Animal(String name, int age, double weight, String color) {
+    public Animal() {
     }
 
-    public Animal(String name, int age, double weight) {
+    public Animal(String name, int age, int weight) {
         this.name = name;
         this.age = age;
         this.weight = weight;
@@ -30,11 +30,11 @@ public class Animal {
         this.age = age;
     }
 
-    public double getWeight() {
+    public int getWeight() {
         return weight;
     }
 
-    public void setWeight(double weight) {
+    public void setWeight(int weight) {
         this.weight = weight;
     }
 
@@ -46,4 +46,5 @@ public class Animal {
                 ", weight=" + weight +
                 '}';
     }
+
 }
