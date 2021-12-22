@@ -1,21 +1,22 @@
-package Candy;
+package Candy21_12;
 
 public class Candy {
+    public  static int VALUE = 0;
     private int id;
     private String color;
-    private String type;
+    private String property;
     private int quantity;
-    private int unit;
+    private double amount;
 
     public Candy() {
     }
 
-    public Candy(int id, String color, String type, int quantity, int unit) {
-        this.id = id;
+    public Candy( String color, String property, int quantity, double amount) {
+        this.id = ++VALUE;
         this.color = color;
-        this.type = type;
+        this.property = property;
         this.quantity = quantity;
-        this.unit = unit;
+        this.amount = amount;
     }
 
     public int getId() {
@@ -34,12 +35,12 @@ public class Candy {
         this.color = color;
     }
 
-    public String getType() {
-        return type;
+    public String getProperty() {
+        return property;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setProperty(String property) {
+        this.property = property;
     }
 
     public int getQuantity() {
@@ -50,12 +51,12 @@ public class Candy {
         this.quantity = quantity;
     }
 
-    public int getUnit() {
-        return unit;
+    public double getAmount() {
+        return amount;
     }
 
-    public void setUnit(int unit) {
-        this.unit = unit;
+    public void setAmount(double amount) {
+        this.amount = amount;
     }
 
     @Override
@@ -63,9 +64,9 @@ public class Candy {
         return "Candy{" +
                 "id=" + id +
                 ", color='" + color + '\'' +
-                ", type='" + type + '\'' +
+                ", property='" + property + '\'' +
                 ", quantity=" + quantity +
-                ", unit=" + unit +
+                ", amount=" + amount +
                 '}';
     }
 }
