@@ -4,20 +4,20 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ManageCandy {
-    private ArrayList<Candy> candies;
-    private Scanner sc = new Scanner(System.in);
+    private final ArrayList<Candy> candies;
+    private final Scanner sc = new Scanner(System.in);
 
     public ManageCandy() {
         this.candies = new ArrayList<>();
     }
 
-    public void displayAll(Candy candy) {
+    public void displayAll() {
         for (Candy c : candies) {
             System.out.println(c);
         }
     }
 
-    public Candy createCandy(Scanner sc) {
+    public Candy createCandy() {
         System.out.println("nhập vào màu kẹo");
         String color = sc.nextLine();
         System.out.println("nhập vào tính chất");
@@ -35,7 +35,7 @@ public class ManageCandy {
         System.out.println(candy);
     }
 
-    public void deleteCandyID(int id) {
+    public Candy deleteCandyID(int id) {
         Candy candy = null;
         for (Candy e : candies) {
             if (e.getId() == id) {
@@ -44,6 +44,7 @@ public class ManageCandy {
         }
         int index = candies.indexOf(candy);
         candies.remove(index);
+        return candy;
     }
 
     public Candy editCandyId(int id) {
@@ -73,7 +74,7 @@ public class ManageCandy {
         return candy;
     }
 
-    public void displayCandyId(int id) {
+    public Candy displayCandyId(int id) {
         Candy candy = null;
         for (Candy h : candies) {
             if (h.getId() == id) {
@@ -85,6 +86,7 @@ public class ManageCandy {
         } else {
             System.out.println("không có id trên");
         }
+        return candy;
     }
 
     public ArrayList<Candy> deleteCandyColor(String color) {
