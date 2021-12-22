@@ -1,60 +1,60 @@
 package BT22_12;
 
-public class Human{
-    private String ten;
-    private String tuoi;
-    private String gioitinh;
-    private String diachi;
+public class Human {
+    private String name;
+    private int age;
+    private String gender;
+    private String address;
 
     public Human() {
     }
 
-    public Human(String ten, String tuoi, String gioitinh, String diachi) {
-        this.ten = ten;
-        this.tuoi = tuoi;
-        this.gioitinh = gioitinh;
-        this.diachi = diachi;
+    public Human(String name, int age, String gender, String address) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.address = address;
     }
 
-    public String getTen() {
-        return ten;
+    public String getName() {
+        return name;
     }
 
-    public void setTen(String ten) {
-        this.ten = ten;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getTuoi() {
-        return tuoi;
+    public int getAge() {
+        return age;
     }
 
-    public void setTuoi(String tuoi) {
-        this.tuoi = tuoi;
+    public void setAge(int age) {
+        this.age = age;
     }
 
-    public String getGioitinh() {
-        return gioitinh;
+    public String getGender() {
+        return gender;
     }
 
-    public void setGioitinh(String gioitinh) {
-        this.gioitinh = gioitinh;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
-    public String getDiachi() {
-        return diachi;
+    public String getAddress() {
+        return address;
     }
 
-    public void setDiachi(String diachi) {
-        this.diachi = diachi;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     @Override
     public String toString() {
         return "Human{" +
-                "ten='" + ten + '\'' +
-                ", tuoi='" + tuoi + '\'' +
-                ", gioitinh='" + gioitinh + '\'' +
-                ", diachi='" + diachi + '\'' +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", gender='" + gender + '\'' +
+                ", address='" + address + '\'' +
                 '}';
     }
 }
