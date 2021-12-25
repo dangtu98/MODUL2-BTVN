@@ -54,8 +54,6 @@ public class Manager {
         return animals.remove(name);
     }
 
-//    public void displayAnimal(String name){
-//        animals.get(name).display();
-//    }
+
 
 }

@@ -43,6 +43,7 @@ public class Main {
                     }else {
                         System.out.println(st2);
                     }
+                    break;
                 case 5:
                     System.out.println("nhập code");
                     int cd3 = scanner.nextInt();
@@ -52,9 +53,11 @@ public class Main {
                     }else {
                         System.out.println(st3);
                     }
+                    break;
                 case 6:
                     ArrayList<Student> student1 = managerStudent.AverageStudent();
                     System.out.println(student1);
+                    break;
             }
 
 
