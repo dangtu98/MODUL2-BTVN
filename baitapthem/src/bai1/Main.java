@@ -30,59 +30,77 @@ public class Main {
                     managerLaptop.displayAll();
                     break;
                 case 3:
-                    System.out.println("nhập vào id của máy ");
-                    int id1 = scanner.nextInt();
-                    Laptop s = managerLaptop.editLaptop(id1);
-                    if (s == null){
-                        System.out.println("khồng có id này");
-                    }else {
-                        System.out.println(s);
+                    try{
+                        System.out.println("nhập vào id của máy ");
+                        int id1 = scanner.nextInt();
+                        Laptop s = managerLaptop.editLaptop(id1);
+                        if (s == null){
+                            System.out.println("khồng có id này");
+                        }else {
+                            System.out.println(s);
+                        }
+                        break;
+                    }catch (Exception e){
+                        System.out.println("Nhập sai thông tin sản phẩm");
                     }
-                    break;
                 case 4:
-                    System.out.println("nhập id của máy");
-                    int id2 = scanner.nextInt();
-                    Laptop a = managerLaptop.deleteLaptop(id2);
-                    if (a == null){
-                        System.out.println("không có id này");
-                    }else {
-                        System.out.println(a);
+                    try {
+                        System.out.println("nhập id của máy");
+                        int id2 = scanner.nextInt();
+                        Laptop a = managerLaptop.deleteLaptop(id2);
+                        if (a == null){
+                            System.out.println("không có id này");
+                        }else {
+                            System.out.println(a);
+                        }
+                        break;
+                    }catch (Exception e){
+                        System.out.println("nhập dữ liệu không đúng !!! ");
                     }
-                    break;
                 case 5:
-                    scanner.nextLine();
-                    System.out.println("nhập hãng máy");
-                    String name = scanner.nextLine();
-                    ArrayList<Laptop> h = managerLaptop.displayLaptopName(name);
-                    if (h == null){
-                        System.out.println("không có hãng máy này");
-                    }else {
-                        System.out.println(h);
+                    try{
+                        scanner.nextLine();
+                        System.out.println("nhập hãng máy");
+                        String name = scanner.nextLine();
+                        ArrayList<Laptop> h = managerLaptop.displayLaptopName(name);
+                        if (h == null){
+                            System.out.println("không có hãng máy này");
+                        }else {
+                            System.out.println(h);
+                        }
+                        break;
+                    }catch (Exception e){
+                        System.out.println("Nhập sai thông tin !!!");
                     }
-                    break;
+
                 case 6:
-                    System.out.println("nhập vào giá máy");
-                    double price = scanner.nextDouble();
-                    ArrayList<Laptop> e = managerLaptop.searchLaptopPrice(price);
-                    System.out.println(e);
-                    break;
-                case 7:
-                    System.out.println("nhập vào id của máy");
-                    int id3 = scanner.nextInt();
-                    Laptop w = managerLaptop.searchLaptopID(id3);
-                    System.out.println(w);
-                    break;
-                case 8:
-                    scanner.nextLine();
-                    System.out.println("nhập màu máy");
-                    String color1 = scanner.nextLine();
-                    ArrayList <Laptop> c = managerLaptop.searchLaptopColor(color1);
-                    if (c == null){
-                        System.out.println("không có màu máy này");
-                    }else {
-                        System.out.println(c);
+                    try{
+                        System.out.println("nhập vào giá máy");
+                        double price = scanner.nextDouble();
+                        ArrayList<Laptop> e = managerLaptop.searchLaptopPrice(price);
+                        System.out.println(e);
+                        break;
+                    }catch (Exception e){
+                        System.out.println("nhập sai thông tin");
                     }
-                    break;
+                case 7:
+
+                        System.out.println("nhập vào id của máy");
+                        int id3 = scanner.nextInt();
+                        Laptop w = managerLaptop.searchLaptopID(id3);
+                        System.out.println(w);
+                        break;
+                case 8:
+                        scanner.nextLine();
+                        System.out.println("nhập màu máy");
+                        String color1 = scanner.nextLine();
+                        ArrayList <Laptop> c = managerLaptop.searchLaptopColor(color1);
+                        if (c == null){
+                            System.out.println("không có màu máy này");
+                        }else {
+                            System.out.println(c);
+                        }
+                        break;
             }
         }while (choice != 0);
     }
