@@ -1,18 +1,18 @@
-package BT29_12;
+package BTT29_12;
 
 public class Human {
     private String name;
     private int age;
-    private String sex;
+    private String gender;
     private String address;
 
     public Human() {
     }
 
-    public Human(String name, int age, String sex, String address) {
+    public Human(String name, int age, String gender, String address) {
         this.name = name;
         this.age = age;
-        this.sex = sex;
+        this.gender = gender;
         this.address = address;
     }
 
@@ -32,12 +32,12 @@ public class Human {
         this.age = age;
     }
 
-    public String getSex() {
-        return sex;
+    public String getGender() {
+        return gender;
     }
 
-    public void setSex(String sex) {
-        this.sex = sex;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public String getAddress() {
@@ -53,7 +53,7 @@ public class Human {
         return "Human{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
-                ", sex='" + sex + '\'' +
+                ", gender='" + gender + '\'' +
                 ", address='" + address + '\'' +
                 '}';
     }
