@@ -1,17 +1,28 @@
 package bai1;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ManagerLaptop {
     private ArrayList<Laptop> laptops;
     private Scanner sc = new Scanner(System.in);
+    private File file = new File("src/bai1/Laptop.txt");
+
+    public File getFile() {
+        return file;
+    }
+
+    public void setLaptops(ArrayList<Laptop> laptops) {
+        this.laptops = laptops;
+    }
 
     public ManagerLaptop() {
         this.laptops = new ArrayList<>();
     }
 
     public Laptop createLaptop() {
+        Laptop laptop = null;
         System.out.println("nhập vào hãng máy");
         String name = sc.nextLine();
         System.out.println("nhập vào màu sắc của máy");
@@ -21,13 +32,13 @@ public class ManagerLaptop {
         System.out.println("nhập vào số lượng của máy");
         int quantity = sc.nextInt();
         sc.nextLine();
-        return new Laptop(name, color, price, quantity);
-    }
-
-
-    public void addLaptop(Laptop laptop) {
+        laptop = new Laptop(name, color, price, quantity);
         laptops.add(laptop);
+        writeToFile(file);
+        return laptop;
     }
+
+
 
 
 
@@ -39,7 +50,9 @@ public class ManagerLaptop {
             }
         }
         int index = laptops.indexOf(laptop);
-        return laptops.remove(index);
+        laptop = laptops.remove(index);
+        writeToFile(file);
+        return  laptop;
     }
 
 
@@ -66,7 +79,8 @@ public class ManagerLaptop {
             int quantity = sc.nextInt();
             laptop.setQuantity(quantity);
             sc.nextLine();
-            laptops.set(index, laptop);
+            laptop = laptops.set(index, laptop);
+            writeToFile(file);
         }
         return laptop;
     }
@@ -117,5 +131,27 @@ public class ManagerLaptop {
         return laptop3;
     }
 
-
+    public void writeToFile(File file){
+        try{
+          FileOutputStream fos =new FileOutputStream(file);
+          ObjectOutputStream oss = new ObjectOutputStream(fos);
+          oss.writeObject(laptops);
+          oss.close();
+          fos.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+    public ArrayList<Laptop> readFromFile(File file){
+          try{
+              FileInputStream fis = new FileInputStream(file);
+              ObjectInputStream ois = new java.io.ObjectInputStream(fis);
+              laptops = (ArrayList<Laptop>) ois.readObject();
+              ois.close();
+              fis.close();
+          }catch (Exception e){
+              e.printStackTrace();
+          }
+        return  laptops;
+    }
 }

@@ -1,6 +1,8 @@
 package bai1;
 
-public class Laptop {
+import java.io.Serializable;
+
+public class Laptop implements Serializable {
     private static int VALUE = 0;
     private int id;
     private String name;

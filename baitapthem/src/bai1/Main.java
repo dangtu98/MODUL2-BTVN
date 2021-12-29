@@ -17,14 +17,14 @@ public class Main {
             System.out.println("6.Tìm laptop theo khoảng giá ");
             System.out.println("7.Tìm laptop theo mã id");
             System.out.println("8.Tìm laptop theo màu");
+            System.out.println("9.Đọc file");
             System.out.println("0.Exit");
             System.out.println("----------Chọn Menu----------");
             choice = scanner.nextInt();
 
             switch (choice){
                 case 1:
-                    Laptop st = managerLaptop.createLaptop();
-                    managerLaptop.addLaptop(st);
+                    managerLaptop.createLaptop();
                     break;
                 case 2:
                     managerLaptop.displayAll();
@@ -101,6 +101,9 @@ public class Main {
                             System.out.println(c);
                         }
                         break;
+                case 9:
+                    managerLaptop.setLaptops(managerLaptop.readFromFile(managerLaptop.getFile()));
+                    break;
             }
         }while (choice != 0);
     }
